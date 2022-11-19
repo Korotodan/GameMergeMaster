@@ -6,16 +6,17 @@ namespace linh
 {
     public class M : MonoBehaviour
     {
-        public  float level;
-        private float atk;
-        private float hp;
-        private float gold;
-        private float spd;
+        public int level;
+        private int atk;
+        private int hp;
+        private int gold;
+        private int spd;
 
-        public float Atk1 { get => atk; set => atk = value; }
-        public float Hp1 { get => hp; set => hp = value; }
-        public float Gold1 { get => gold; set => gold = value; }
-        public float Spd { get => spd; set => spd = value; }
+        
+        public int Atk1 { get => atk; set => atk = value; }
+        public int Hp1 { get => hp; set => hp = value; }
+        public int Gold1 { get => gold; set => gold = value; }
+        public int Spd { get => spd; set => spd = value; }
 
         void Start()
         {
@@ -26,24 +27,24 @@ namespace linh
         // Update is called once per frame
         void Update()
         {
-            Atk(atk, level);
-            Hp(hp,level);
+            Atk(Atk1,level);
+            Hp(Hp1,level);
             Gold();
 
         }
 
-        public static float Atk(float atk, float level)
+        public static int Atk(int atk, int level)
         {
-            atk = 12f;
+            atk = 12;
             for (int i = 0; i < level; i++)
             {
                 atk = atk * 2 + 1;
             }
             return atk;
         }
-       public static float Hp(float hp ,float level)
+       public static int Hp(int hp ,int level)
         {
-            hp = 80f;
+            hp = 80;
             for (int i = 0; i < level; i++)
             {
                 hp = hp * 2;
@@ -54,7 +55,7 @@ namespace linh
         }
         public void Gold()
         {
-            Gold1 = 100f;
+            Gold1 = 100;
             for (int i = 0; i < level; i++)
             {
                 if (i == 0)
